@@ -4,16 +4,13 @@
 
 fun runningSum(nums: IntArray): IntArray {
 
-    val runningSum = mutableListOf<Int>()
+    val runningSum = IntArray(nums.size)
 
-    for (i in nums.indices) {
-        var sum = 0
-        var z = i
-        while (z >= 0) {
-            sum += nums[z]
-            z--
-        }
-        runningSum.add(sum)
+    runningSum[0] = nums[0]
+    for (i in 1 until nums.size) {
+        runningSum[i] = runningSum[i - 1] + nums[i]
     }
-    return runningSum.toIntArray()
+
+    return runningSum
+
 }
