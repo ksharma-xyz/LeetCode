@@ -1,5 +1,7 @@
+import easy.fizzBuzz
+
 fun main() {
 
-    val result = runningSum(intArrayOf(1, 2, 3, 4))
-    println(result.toList())
+    val result = fizzBuzz(11)
+    println(result)
 }
